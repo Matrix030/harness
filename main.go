@@ -29,7 +29,7 @@ func main() {
 	))
 
 	err := agent.Run(
-		"Create a file called hello.txt with the content 'Hello from Go harness!'",
+		"Do these two things: 1) create file a.txt with content 'file A', 2) create file b.txt with content 'file B'",
 		registry,
 	)
 	if err != nil {
