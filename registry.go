@@ -35,8 +35,8 @@ type OllamaFunction struct {
 	Description string `json:"description"`
 }
 
-func (r *ToolRegistry) AsOllamaTools() []OllamaToolDef {
-	defs := make([]OllamaToolDef, 0, len(r.tools))
+func (r *ToolRegistry) AsOllamaTools() []any {
+	defs := make([]any, 0, len(r.tools))
 	for _, t := range r.tools {
 		defs = append(defs, OllamaToolDef{
 			Type: "function",

@@ -1,6 +1,9 @@
 package main
 
 import (
+	"log"
+
+	"github.com/Matrix030/mini_harness/agent"
 	"github.com/Matrix030/mini_harness/tools"
 )
 
@@ -24,4 +27,12 @@ func main() {
 		"Run a bash command. Params: 'commands' (string, required)",
 		tools.RunBash,
 	))
+
+	err := agent.Run(
+		"Create a file called hello.txt with the content 'Hello from Go harness!'",
+		registry,
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
